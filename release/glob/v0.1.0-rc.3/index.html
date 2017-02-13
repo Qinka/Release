@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="generator" content="pandoc" />
+  <title>Glob 0.1.0-rc(3)(0.1.0.50)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<h1 id="glob-0.1.0-rc30.1.0.50">Glob 0.1.0-rc(3)(0.1.0.50)</h1>
+<p>A more stable glob version for preview.</p>
+<ul>
+<li>Authentication via RSA Public/Private Key</li>
+</ul>
+<h2 id="download-usage">Download &amp;&amp; Usage</h2>
+<p>Pull the image from docker</p>
+<pre class="shell"><code>docker pull qinka/glob:glob-0.1.0-docker-0.1.0-rc1-8b82f93-Linux-Ubuntu-trusty-GHC_8.0.2-x86_64-threaded</code></pre>
+<p>or</p>
+<pre class="shell"><code>docker pull qinka/glob:glob-0.1.0-docker-0.1.0-rc1-8b82f93-Linux-Ubuntu-trusty-GHC_8.0.2-x86_64-llvm-3.7-threaded</code></pre>
+<p>You can also download the files: <a href="http://prj.qinka.pw/release/release/glob/v0.1.0-rc.3/glob-0.1.0.bin.x86_64.docker.linux.llvm-3.7.tar.xz">glob-0.1.0.bin.x86_64.docker.linux.llvm-3.7.tar.xz</a> or <a href="http://prj.qinka.pw/release/release/glob/v0.1.0-rc.3/glob-0.1.0.bin.x86_64.docker.linux.tar.xz">glob-0.1.0.bin.x86_64.docker.linux.tar.xz</a> And use <code>docker load</code> load the images.</p>
+<p>If your want to see ugly man page, you can download <a href="http://prj.qinka.pw/release/release/glob/v0.1.0-rc.3/glob-doc-0.1.0-wiki.tar.xz">glob-doc-0.1.0-wiki.tar.xz</a>, and run:</p>
+<pre class="shell"><code>make install</code></pre>
+<p>If you want to get the codes, download <a href="https://github.com/Qinka/Glob/archive/v0.1.0-rc.3.tar.gz">source code(tar.gz)</a>, or <a href="https://github.com/Qinka/Glob/archive/v0.1.0-rc.3.zip">source code(zip)</a>. And you can also using git:</p>
+<pre class="shell"><code>git clone https://github.com/Qinka/Glob.git
+git checkout v0.1.0-rc.3</code></pre>
+<p>And if you want the latest one, checkout to the <code>master</code> or development branch.</p>
+<h2 id="build-tools">Build &amp;&amp; Tools</h2>
+<p>Using stack to build these things.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">stack</span> build glob-launch <span class="co"># build glob-launch</span>
+<span class="ex">stack</span> build glob-update <span class="co"># build glob-update, a tool to help upload and update</span>
+<span class="ex">stack</span> build glob-ih     <span class="co"># build glob-ih, a tool to help identify</span>
+<span class="ex">stack</span> build glob-timecheck <span class="co"># build glob-timecheck, a tool to check the delay between the backend and your computer.</span></code></pre></div>
+<p>If you want to create the public and private key, you need load a haskell's ghc docker-image, then save the following to <code>MkKey.hs</code></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">#!runghc</span>
+<span class="kw">import </span><span class="dt">Crypto.PubKey.RSA</span>
+
+<span class="ot">fileName ::</span> <span class="dt">String</span>
+fileName <span class="fu">=</span> undefined   <span class="co">-- need to change</span>
+
+<span class="ot">size ::</span> <span class="dt">Int</span>
+size <span class="fu">=</span> undefined       <span class="co">-- need to change</span>
+<span class="ot">e ::</span> <span class="dt">Integer</span>
+e <span class="fu">=</span> undefined          <span class="co">-- need to change</span>
+
+<span class="ot">main ::</span> <span class="dt">IO</span> ()
+main <span class="fu">=</span> <span class="kw">do</span>
+  (pub,pri) <span class="ot">&lt;-</span> generate size e
+  writeFile (fileName<span class="fu">++</span><span class="st">&quot;.pub&quot;</span>) <span class="fu">$</span> show pub
+  writeFile fileName <span class="fu">$</span> show private</code></pre></div>
+<p>and change the <code>fileName</code>, <code>size</code>, and <code>e</code>, and run:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">cabal</span> install cryptonite
+<span class="fu">chmod</span> a+x MkKey.hs
+<span class="ex">./MkKey.hs</span></code></pre></div>
+</body>
+</html>
